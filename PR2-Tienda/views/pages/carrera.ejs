@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingeniería en Multimedia</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <h1>No desechables</h1>
+    <!-- <h2>PRIMER SEMESTRE</h2> -->
+    <!-- <ul>
+        <li>ALGEBRA I</li>
+        <li>FISICA</li>
+        <li>INTRODUCCION AL DISEÑO DIGITAL</li>
+        <li>PRINCIPIOS DE PROGRAMACION</li>
+        <li>INTRODUCCION A LA MULTIMEDIA</li>
+        <li>METODOLOGIA DE LA INVESTIGACION</li>
+        <li>INGLES I</li>
+    </ul> -->
+
+    <!-- <h2>SEGUNDO SEMESTRE</h2>
+    <ul>
+        <li>MATEMATICAS I</li>
+        <li>PRINCIPIOS DE ELECTRONICA</li>
+        <li>INTRODUCCION A LA PUBLICIDAD</li>
+        <li>PROGRAMACION I</li>
+        <li>DISEÑO Y PRODUCCION DIGITAL</li>
+        <li>COMUNICACIÓN</li>
+        <li>MULTIMEDIA</li>
+        <li>INGLES II</li>
+    </ul> -->
+
+    <% semestres.forEach(function(semestre) { %>
+        <h2><%= semestre.nombre %> </h2>
+        <ul>
+        <% semestre.materias.forEach(function(materia) { %>
+            <li class="materia">
+                <%= materia.nombre %>
+                <a href="/multimedia/<%= semestre.id %>/<%= materia.id %>">Más información</a>
+            </li>
+        <% }); %>
+        </ul>
+    <% }); %>
+
+</body>
+</html>
